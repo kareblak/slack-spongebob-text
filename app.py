@@ -12,11 +12,12 @@ def spongebob_text(text):
 @app.route('/spongebob', methods=['POST'])
 def spongebob():
     data = request.form
-    text = data.get('text', '')  # Text after the slash command
+    text = data.get('text', '').strip()
+
     response_text = spongebob_text(text)
 
     return jsonify({
-        "response_type": "ephemeral",  # Visible to everyone in the channel
+        "response_type": "in_channel",
         "text": response_text
     })
 
