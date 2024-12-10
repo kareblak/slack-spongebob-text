@@ -16,7 +16,7 @@ def spongebob():
     response_text = spongebob_text(text)
 
     return jsonify({
-        "response_type": "in_channel",  # Visible to everyone in the channel
+        "response_type": "ephemeral",  # Visible to everyone in the channel
         "text": response_text
     })
 
